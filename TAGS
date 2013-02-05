@@ -1,0 +1,189 @@
+
+init.rb,0
+
+lib/acts_as_paranoid/associations.rb,254
+module ActsAsParanoidActsAsParanoid1,0
+  module AssociationsAssociations2,22
+    def self.included(base)included3,44
+    module ClassMethodsClassMethods10,191
+      def belongs_to_with_deleted(target, options = {})belongs_to_with_deleted11,215
+
+lib/acts_as_paranoid/core.rb,1429
+module ActsAsParanoidActsAsParanoid1,0
+  module CoreCore2,22
+    def self.included(base)included3,36
+    module ClassMethodsClassMethods7,104
+      def self.extended(base)extended8,128
+      def before_recover(method)before_recover12,208
+      def after_recover(method)after_recover16,299
+      def with_deletedwith_deleted20,388
+      def only_deletedonly_deleted24,461
+      def delete_all!(conditions = nil)delete_all!32,780
+      def delete_all(conditions = nil)delete_all36,894
+      def paranoid_default_scope_sqlparanoid_default_scope_sql40,1036
+      def string_type_with_deleted_value?string_type_with_deleted_value?50,1384
+      def paranoid_columnparanoid_column54,1525
+      def paranoid_column_typeparanoid_column_type58,1609
+      def dependent_associationsdependent_associations62,1703
+      def delete_now_valuedelete_now_value66,1858
+      def without_paranoid_default_scopewithout_paranoid_default_scope76,2106
+    def persisted?persisted?84,2290
+    def paranoid_valueparanoid_value88,2353
+    def destroy!destroy!92,2429
+    def destroydestroy104,2878
+    def recover(options={})recover119,3354
+    def recover_dependent_associations(window, options)recover_dependent_associations135,3858
+    def destroy_dependent_associations!destroy_dependent_associations!156,4617
+    def deleted?deleted?171,5021
+    def paranoid_value=(value)paranoid_value=180,5235
+
+lib/acts_as_paranoid/relation.rb,398
+module ActsAsParanoidActsAsParanoid1,0
+  module RelationRelation2,22
+    def self.included(base)included3,40
+        def paranoid?paranoid?5,93
+        def paranoid_deletion_attributesparanoid_deletion_attributes9,183
+        def delete_all!(conditions = nil)delete_all!14,350
+        def delete_all(conditions = nil)delete_all22,536
+        def destroy!(id_or_array)destroy!30,743
+
+lib/acts_as_paranoid/validations.rb,482
+module ActsAsParanoidActsAsParanoid3,46
+  module ValidationsValidations4,68
+    def self.included(base)included5,89
+    class UniquenessWithoutDeletedValidator < ActiveRecord::Validations::UniquenessValidatorUniquenessWithoutDeletedValidator9,157
+      def validate_each(record, attribute, value)validate_each10,250
+    module ClassMethodsClassMethods37,1320
+      def validates_uniqueness_of_without_deleted(*attr_names)validates_uniqueness_of_without_deleted38,1344
+
+lib/acts_as_paranoid.rb,195
+module ActsAsParanoidActsAsParanoid10,245
+  def paranoid?paranoid?12,270
+  def validates_as_paranoidvalidates_as_paranoid16,352
+  def acts_as_paranoid(options = {})acts_as_paranoid20,429
+
+test/test_associations.rb,2018
+class AssociationsTest < ParanoidBaseTestAssociationsTest3,23
+  def test_removal_with_associationstest_removal_with_associations4,65
+  def test_belongs_to_with_deletedtest_belongs_to_with_deleted35,1511
+  def test_belongs_to_polymorphic_with_deletedtest_belongs_to_polymorphic_with_deleted48,2046
+  def test_belongs_to_nil_polymorphic_with_deletedtest_belongs_to_nil_polymorphic_with_deleted61,2658
+  def test_belongs_to_optionstest_belongs_to_options74,3212
+  def test_belongs_to_with_deleted_optionstest_belongs_to_with_deleted_options80,3424
+  def test_belongs_to_polymorphic_with_deleted_optionstest_belongs_to_polymorphic_with_deleted_options86,3697
+  def test_only_find_associated_records_when_finding_with_paranoid_deletedtest_only_find_associated_records_when_finding_with_paranoid_deleted92,4030
+  def test_cannot_find_a_paranoid_deleted_many_many_associationtest_cannot_find_a_paranoid_deleted_many_many_association107,4565
+  def test_cannot_find_a_paranoid_destroyed_many_many_associationtest_cannot_find_a_paranoid_destroyed_many_many_association121,5129
+  def test_cannot_find_a_has_many_through_object_when_its_linking_object_is_paranoid_destroyedtest_cannot_find_a_has_many_through_object_when_its_linking_object_is_paranoid_destroyed135,5696
+  def test_cannot_find_a_paranoid_deleted_modeltest_cannot_find_a_paranoid_deleted_model149,6123
+  def test_bidirectional_has_many_through_association_clear_is_paranoidtest_bidirectional_has_many_through_association_clear_is_paranoid158,6345
+  def test_bidirectional_has_many_through_association_destroy_is_paranoidtest_bidirectional_has_many_through_association_destroy_is_paranoid172,6900
+  def test_bidirectional_has_many_through_association_delete_is_paranoidtest_bidirectional_has_many_through_association_delete_is_paranoid186,7466
+  def test_belongs_to_on_normal_model_is_paranoidtest_belongs_to_on_normal_model_is_paranoid200,8030
+  def test_double_belongs_to_with_deletedtest_double_belongs_to_with_deleted208,8260
+
+test/test_core.rb,2485
+class ParanoidTest < ParanoidBaseTestParanoidTest3,23
+  def test_paranoid?test_paranoid?4,61
+  def test_scope_inclusion_with_time_column_typetest_scope_inclusion_with_time_column_type14,407
+  def test_fake_removaltest_fake_removal24,836
+  def test_real_removaltest_real_removal43,1579
+  def test_recoverytest_recovery66,2450
+  def setup_recursive_testssetup_recursive_tests80,2887
+  def test_recursive_fake_removaltest_recursive_fake_removal118,4489
+  def test_recursive_real_removaltest_recursive_real_removal132,4929
+  def test_recursive_recoverytest_recursive_recovery146,5414
+  def test_recursive_recovery_dependant_windowtest_recursive_recovery_dependant_window163,5942
+  def test_non_recursive_recoverytest_non_recursive_recovery187,6958
+  def test_deleted?test_deleted?204,7487
+  def test_paranoid_destroy_callbacks    test_paranoid_destroy_callbacks212,7687
+  def test_hard_destroy_callbackstest_hard_destroy_callbacks223,8065
+  def test_recovery_callbackstest_recovery_callbacks235,8439
+  def test_delete_by_multiple_id_is_paranoidtest_delete_by_multiple_id_is_paranoid251,8907
+  def test_destroy_by_multiple_id_is_paranoidtest_destroy_by_multiple_id_is_paranoid260,9196
+  def test_delete_by_single_id_is_paranoidtest_delete_by_single_id_is_paranoid269,9487
+  def test_destroy_by_single_id_is_paranoidtest_destroy_by_single_id_is_paranoid276,9670
+  def test_instance_delete_is_paranoidtest_instance_delete_is_paranoid283,9855
+  def test_instance_destroy_is_paranoidtest_instance_destroy_is_paranoid290,10005
+  def test_string_type_with_no_nil_value_before_destroytest_string_type_with_no_nil_value_before_destroy298,10247
+  def test_string_type_with_no_nil_value_after_destroytest_string_type_with_no_nil_value_after_destroy303,10424
+  def test_string_type_with_no_nil_value_before_destroy_with_deletedtest_string_type_with_no_nil_value_before_destroy_with_deleted309,10615
+  def test_string_type_with_no_nil_value_after_destroy_with_deletedtest_string_type_with_no_nil_value_after_destroy_with_deleted314,10818
+  def test_string_type_with_no_nil_value_before_destroy_only_deletedtest_string_type_with_no_nil_value_before_destroy_only_deleted320,11035
+  def test_string_type_with_no_nil_value_after_destroy_only_deletedtest_string_type_with_no_nil_value_after_destroy_only_deleted325,11238
+  def test_string_type_with_no_nil_value_after_destroyed_twicetest_string_type_with_no_nil_value_after_destroyed_twice331,11455
+
+test/test_default_scopes.rb,315
+class MultipleDefaultScopesTest < ParanoidBaseTestMultipleDefaultScopesTest3,23
+  def setupsetup4,74
+  def test_fake_removal_with_multiple_default_scopetest_fake_removal_with_multiple_default_scope17,439
+  def test_real_removal_with_multiple_default_scopetest_real_removal_with_multiple_default_scope31,953
+
+test/test_helper.rb,2787
+def setup_dbsetup_db15,366
+def teardown_dbteardown_db172,3805
+class ParanoidTime < ActiveRecord::BaseParanoidTime178,3939
+class ParanoidBoolean < ActiveRecord::BaseParanoidBoolean192,4318
+class ParanoidString < ActiveRecord::BaseParanoidString201,4599
+class NotParanoid < ActiveRecord::BaseNotParanoid205,4738
+class HasOneNotParanoid < ActiveRecord::BaseHasOneNotParanoid208,4782
+class DoubleHasOneNotParanoid < HasOneNotParanoidDoubleHasOneNotParanoid212,4883
+class ParanoidHasManyDependant < ActiveRecord::BaseParanoidHasManyDependant217,5040
+class ParanoidBelongsDependant < ActiveRecord::BaseParanoidBelongsDependant226,5504
+class ParanoidHasOneDependant < ActiveRecord::BaseParanoidHasOneDependant232,5622
+class ParanoidWithCallback < ActiveRecord::BaseParanoidWithCallback238,5729
+  def initialize(*attrs)initialize252,6191
+  def call_me_before_destroycall_me_before_destroy257,6336
+  def call_me_after_destroycall_me_after_destroy261,6408
+  def call_me_after_commit_on_destroycall_me_after_commit_on_destroy265,6478
+  def call_me_before_recovercall_me_before_recover269,6566
+  def call_me_after_recovercall_me_after_recover273,6636
+class ParanoidDestroyCompany < ActiveRecord::BaseParanoidDestroyCompany278,6708
+class ParanoidDeleteCompany < ActiveRecord::BaseParanoidDeleteCompany284,6873
+class ParanoidProduct < ActiveRecord::BaseParanoidProduct290,7040
+class SuperParanoid < ActiveRecord::BaseSuperParanoid297,7214
+class HasManyInheritedSuperParanoidz < ActiveRecord::BaseHasManyInheritedSuperParanoidz302,7328
+class InheritedParanoid < SuperParanoidInheritedParanoid306,7479
+class ParanoidObserver < ActiveRecord::ObserverParanoidObserver310,7543
+  def before_recover(paranoid_object)before_recover315,7689
+  def after_recover(paranoid_object)after_recover319,7783
+  def resetreset323,7875
+class ParanoidManyManyParentLeft < ActiveRecord::BaseParanoidManyManyParentLeft330,7972
+class ParanoidManyManyParentRight < ActiveRecord::BaseParanoidManyManyParentRight335,8158
+class ParanoidManyManyChild < ActiveRecord::BaseParanoidManyManyChild340,8344
+class ParanoidWithScopedValidation < ActiveRecord::BaseParanoidWithScopedValidation346,8508
+class ParanoidBaseTest < ActiveSupport::TestCaseParanoidBaseTest353,8703
+  def setupsetup354,8752
+  def teardownteardown369,9172
+  def assert_empty(collection)assert_empty373,9212
+  def assert_paranoid_deletion(model)assert_paranoid_deletion377,9317
+  def assert_non_paranoid_deletion(model)assert_non_paranoid_deletion383,9507
+  def find_row(model)find_row388,9632
+class ParanoidForest < ActiveRecord::BaseParanoidForest395,9833
+class ParanoidTree < ActiveRecord::BaseParanoidTree407,10237
+class ParanoidHuman < ActiveRecord::BaseParanoidHuman413,10361
+
+test/test_inheritance.rb,256
+class InheritanceTest < ParanoidBaseTestInheritanceTest3,23
+  def test_destroy_dependents_with_inheritancetest_destroy_dependents_with_inheritance4,64
+  def test_class_instance_variables_are_inheritedtest_class_instance_variables_are_inherited11,390
+
+test/test_observers.rb,141
+class ParanoidObserverTest < ParanoidBaseTestParanoidObserverTest3,23
+  def test_called_observer_methodstest_called_observer_methods4,69
+
+test/test_relations.rb,516
+class RelationsTest < ParanoidBaseTestRelationsTest3,23
+  def setupsetup4,62
+  def test_filtering_with_scopestest_filtering_with_scopes22,796
+  def test_associations_filtered_by_with_deletedtest_associations_filtered_by_with_deleted39,1456
+  def test_associations_filtered_by_only_deletedtest_associations_filtered_by_only_deleted59,2372
+  def test_fake_removal_through_relationtest_fake_removal_through_relation76,3110
+  def test_real_removal_through_relationtest_real_removal_through_relation89,3680
+
+test/test_validations.rb,525
+class ValidatesUniquenessTest < ParanoidBaseTestValidatesUniquenessTest3,23
+  def test_should_include_deleted_by_defaulttest_should_include_deleted_by_default4,72
+  def test_should_validate_without_deletedtest_should_validate_without_deleted14,353
+  def test_models_with_scoped_validations_can_be_multiply_deletedtest_models_with_scoped_validations_can_be_multiply_deleted23,612
+  def test_models_with_scoped_validations_can_be_multiply_destroyedtest_models_with_scoped_validations_can_be_multiply_destroyed33,1033
