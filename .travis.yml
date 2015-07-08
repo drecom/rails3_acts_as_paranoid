@@ -17,5 +17,7 @@ matrix:
     - rvm: ruby-head
     - rvm: rbx
     - rvm: jruby
+    - gemfile: gemfiles/active_record_40.gemfile
+    - gemfile: gemfiles/active_record_42.gemfile
     - gemfile: gemfiles/active_record_edge.gemfile
   fast_finish: true
