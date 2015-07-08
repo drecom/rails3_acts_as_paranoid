@@ -1,21 +1,9 @@
-source "http://rubygems.org"
-
-gem "activerecord", "~>3.2"
+source "https://rubygems.org"
 
 # Development dependencies
-gem "rake"
-gem "activesupport", "~>3.2"
-
-platforms :ruby do
-  gem "sqlite3"
+group :development do
+  gem "sqlite3", :platforms => [:ruby]
+  gem "activerecord-jdbcsqlite3-adapter", :platforms => [:jruby]
 end
 
-platforms :jruby do
-  gem "activerecord-jdbcsqlite3-adapter"
-end
-
-group :test do
-  gem "minitest"
-  gem "ZenTest"
-  gem "autotest-growl"
-end
+gemspec
