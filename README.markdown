@@ -4,6 +4,8 @@ A simple plugin which hides records instead of deleting them, being able to reco
 
 **This branch targets Rails 4.0.** If you're working with another version, switch to the corresponding branch.
 
+[![Build Status](https://travis-ci.org/drecom/rails3_acts_as_paranoid.svg?branch=rails4.1)](https://travis-ci.org/drecom/rails3_acts_as_paranoid)
+
 ## Credits
 
 This plugin was inspired by [acts_as_paranoid](http://github.com/technoweenie/acts_as_paranoid) and [acts_as_active](http://github.com/fernandoluizao/acts_as_active).
