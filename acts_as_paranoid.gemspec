@@ -1,17 +1,32 @@
-Gem::Specification.new do |s|
-  s.name                  = "acts_as_paranoid"
-  s.version               = "0.4.1"
-  s.platform              = Gem::Platform::RUBY
-  s.authors               = ["Goncalo Silva", "Charles G.", "Rick Olson"]
-  s.email                 = ["goncalossilva@gmail.com"]
-  s.homepage              = "https://github.com/goncalossilva/rails3_acts_as_paranoid"
-  s.summary               = "Active Record (~>3.2) plugin which allows you to hide and restore records without actually deleting them."
-  s.description           = "Active Record (~>3.2) plugin which allows you to hide and restore records without actually deleting them. Check its GitHub page for more in-depth information."
-  s.rubyforge_project     = s.name
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'acts_as_paranoid/version'
 
-  s.required_rubygems_version = ">= 1.3.6"
+Gem::Specification.new do |spec|
+  spec.name        = "acts_as_paranoid"
+  spec.version     = ActsAsParanoid::VERSION
+  spec.authors     = ["Zachary Scott", "Goncalo Silva", "Rick Olson"]
+  spec.email       = ["e@zzak.io"]
+  spec.summary     = "Active Record plugin which allows you to hide and restore records without actually deleting them."
+  spec.description = "Check the home page for more in-depth information."
+  spec.homepage    = "https://github.com/ActsAsParanoid/acts_as_paranoid"
+  spec.license     = "MIT"
 
-  s.add_dependency "activerecord", ">= 3.2"
+  spec.files         = Dir["{lib}/**/*.rb", "LICENSE", "*.md"]
+  spec.test_files    = Dir["test/*.rb"]
+  spec.require_paths = ["lib"]
 
-  s.files        = Dir["{lib}/**/*.rb", "LICENSE", "*.markdown"]
+  spec.required_rubygems_version = ">= 1.3.6"
+
+  spec.add_dependency "activerecord", "~> 4.0"
+  spec.add_dependency "activesupport", "~> 4.0"
+
+  spec.add_development_dependency "bundler", "~> 1.5"
+  spec.add_development_dependency "rake"
+  spec.add_development_dependency "rdoc"
+  spec.add_development_dependency "minitest", "~> 4.0"
+
+  spec.add_development_dependency "rails-observers"
+  spec.add_development_dependency "test-unit"
 end
