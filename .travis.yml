@@ -22,3 +22,6 @@ matrix:
     - gemfile: gemfiles/active_record_42.gemfile
     - gemfile: gemfiles/active_record_edge.gemfile
   fast_finish: true
+branches:
+  only:
+  - rails4.1
