@@ -3,7 +3,6 @@ require 'test/unit'
 require 'active_support'
 require 'active_record'
 require 'active_model'
-require "rails/observers/activerecord/active_record"
 
 $:.unshift "#{File.dirname(__FILE__)}/../"
 $:.unshift "#{File.dirname(__FILE__)}/../lib/"

@@ -27,6 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rdoc"
   spec.add_development_dependency "minitest", "~> 4.0"
 
-  spec.add_development_dependency "rails-observers"
   spec.add_development_dependency "test-unit"
 end
