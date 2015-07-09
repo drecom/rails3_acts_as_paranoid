@@ -2,7 +2,7 @@
 
 A simple plugin which hides records instead of deleting them, being able to recover them.
 
-**This branch targets Rails 4.0.** If you're working with another version, switch to the corresponding branch.
+**This branch targets Rails 4.1.** If you're working with another version, switch to the corresponding branch.
 
 [![Build Status](https://travis-ci.org/drecom/rails3_acts_as_paranoid.svg?branch=rails4.1)](https://travis-ci.org/drecom/rails3_acts_as_paranoid)
 
