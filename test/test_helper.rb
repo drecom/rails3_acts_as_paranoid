@@ -398,7 +398,7 @@ class ParanoidForest < ActiveRecord::Base
 
   ActiveRecord::Base.logger = Logger.new(StringIO.new)
 
-  scope :rainforest, -> { where(:rainforest => true) }
+  scope :rainforest, where(:rainforest => true)
 
   has_many :paranoid_trees, :dependent => :destroy
 end
@@ -411,5 +411,5 @@ end
 
 class ParanoidHuman < ActiveRecord::Base
   acts_as_paranoid
-  default_scope { where('gender = ?', 'male') }
+  default_scope where('gender = ?', 'male')
 end
