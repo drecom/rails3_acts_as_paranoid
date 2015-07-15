@@ -25,3 +25,5 @@ matrix:
 branches:
   only:
   - rails4.1
+sudo: false
+
